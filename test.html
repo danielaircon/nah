@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust Me</title>
+<link rel="icon" type="image/png" href="icon/dibel.png">
+<style>
+  body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 5s ease;
+  }
+</style>
+</head>
+<body>
+  <button id="trustMeBtn">Trust Me</button>
+  <script>
+    document.getElementById('trustMeBtn').addEventListener('click', function() {
+      var button = document.getElementById('trustMeBtn');
+      var video = document.createElement('video');
+      video.src = 'funnicvid/alligatorexplodes.mp4';
+      video.controls = true;
+      video.style.display = 'none'; // Hide the video initially
+      document.body.appendChild(video);
+
+      button.style.opacity = '0'; // Start fading out the button
+      setTimeout(function() {
+        button.style.display = 'none'; // Hide the button after fading out
+        video.style.display = 'block'; // Show the video
+        video.play(); // Start playing the video
+      }, 5000); // 5000 milliseconds = 5 seconds
+    });
+  </script>
+</body>
+</html>
